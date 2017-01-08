@@ -17,19 +17,19 @@ var GreeterForm = React.createClass({
     e.preventDefault();
 
     var updates = {};
-    var name = this.refs.name.value; // access property from ref
-    var message = this.refs.message.value;
+    var name = this.refs.referenceToName.value; // access property from ref
+    var message = this.refs.referenceToMessage.value;
 
     // if component received valid input
     if (name.length > 0) {
-      this.refs.name.value = ''; // clear field
+      this.refs.referenceToName.value = ''; // clear field
 
       // calls in function passed from parent (handleNewData)
       updates.name = name; // update state of parent component
     }
 
     if (message.length > 0) {
-      this.refs.message.value = '';
+      this.refs.referenceToMessage.value = '';
       updates.message = message;
     }
 
@@ -39,10 +39,10 @@ var GreeterForm = React.createClass({
     return (
       <form onSubmit={this.onFormSubmit}>
         <div>
-          <input type="text" ref="name" placeholder="Enter name"/>
+          <input type="text" ref="referenceToName" placeholder="Enter name"/>
         </div>
         <div>
-          <textarea ref="message" placeholder="Enter message"></textarea>
+          <textarea ref="referenceToMessage" placeholder="Enter message"></textarea>
         </div>
         <div>
           <button>Submit</button>
