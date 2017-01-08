@@ -1,10 +1,10 @@
 module.exports = {
-  Entry: '.public/app.js',
-  Output:{
-    Path: __dirname,
-    Filename: './public/bundle.js'
+  entry: './public/app.js', // where to start processing code
+  output:{
+    path: __dirname,
+    filename: './public/bundle.js'
   },
-  Resolve: {
-    Extensions: ['', '.js', '.jsx']
+  resolve: {
+    extensions: ['', '.js', '.jsx']
   }
 };

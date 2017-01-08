@@ -44,6 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+	// load ‘Greeter.js’ file
 	var greeter = __webpack_require__(1);
 
 	greeter();
@@ -54,9 +55,10 @@
 /***/ function(module, exports) {
 
 	function greeter(){
-	  document.write('From greeter function');
+	  document.write('Write from greeter function');
 	}
 
+	// anybody who requires this file will get accessed to 'greeter' function
 	module.exports = greeter;
 
 
