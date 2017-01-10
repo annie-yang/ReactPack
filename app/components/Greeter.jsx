@@ -6,8 +6,8 @@ var GreeterForm = require('GreeterForm');
 var Greeter = React.createClass({
   getDefaultProps: function () {
     return {
-      name: 'React',
-      message: 'This is the default message!'
+      name: 'World',
+      message: 'Watch me change by simply typing in the box!'
     };
   },
   getInitialState: function () {
