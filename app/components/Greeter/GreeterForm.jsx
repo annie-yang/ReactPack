@@ -31,7 +31,8 @@ var GreeterForm = React.createClass({
           <input type="text" ref="referenceToName" placeholder="Enter name"/>
         </div>
         <div>
-          <textarea ref="referenceToMessage" placeholder="Enter message"></textarea>
+          <br/>
+          <textarea rows="4" cols="50" ref="referenceToMessage" placeholder="Enter message"></textarea>
         </div>
         <div>
           <button>Submit</button>

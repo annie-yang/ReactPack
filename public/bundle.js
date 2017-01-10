@@ -57,6 +57,7 @@
 
 	var Main = __webpack_require__(216);
 	var Greeter = __webpack_require__(218);
+	var Weather = __webpack_require__(221);
 
 	ReactDOM.render(React.createElement(
 	  Router,
@@ -64,7 +65,8 @@
 	  React.createElement(
 	    Route,
 	    { path: '/', component: Main },
-	    React.createElement(Route, { path: 'greeter', component: Greeter })
+	    React.createElement(Route, { path: 'greeter', component: Greeter }),
+	    React.createElement(Route, { path: 'Weather', component: Weather })
 	  )
 	), document.getElementById('app'));
 
@@ -24905,6 +24907,11 @@
 	        Link,
 	        { to: '/greeter', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
 	        'Greeter'
+	      ),
+	      React.createElement(
+	        Link,
+	        { to: '/weather', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	        'Weather'
 	      )
 	    );
 	  }
@@ -24929,7 +24936,7 @@
 	  getDefaultProps: function getDefaultProps() {
 	    return {
 	      name: 'World',
-	      message: 'Watch me change by simply typing in the box!'
+	      message: 'Watch me change by simply typing in the message box!'
 	    };
 	  },
 	  getInitialState: function getInitialState() {
@@ -25041,7 +25048,8 @@
 	      React.createElement(
 	        'div',
 	        null,
-	        React.createElement('textarea', { ref: 'referenceToMessage', placeholder: 'Enter message' })
+	        React.createElement('br', null),
+	        React.createElement('textarea', { rows: '4', cols: '50', ref: 'referenceToMessage', placeholder: 'Enter message' })
 	      ),
 	      React.createElement(
 	        'div',
@@ -25057,6 +25065,93 @@
 	});
 
 	module.exports = GreeterForm;
+
+/***/ },
+/* 221 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var WeatherForm = __webpack_require__(222);
+	var WeatherMessage = __webpack_require__(223);
+
+	var Weather = React.createClass({
+	  displayName: 'Weather',
+
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'h3',
+	        null,
+	        'Weather Component'
+	      ),
+	      React.createElement(WeatherForm, null),
+	      React.createElement(WeatherMessage, null)
+	    );
+	  }
+	});
+
+	module.exports = Weather;
+
+/***/ },
+/* 222 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var WeatherForm = React.createClass({
+	  displayName: "WeatherForm",
+
+	  render: function render() {
+	    return React.createElement(
+	      "div",
+	      null,
+	      React.createElement(
+	        "form",
+	        null,
+	        React.createElement("input", { type: "text" }),
+	        React.createElement(
+	          "button",
+	          null,
+	          "Get Weather"
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = WeatherForm;
+
+/***/ },
+/* 223 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var WeatherMessage = React.createClass({
+	  displayName: 'WeatherMessage',
+
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'h3',
+	        null,
+	        'It\'s 40 in Philadelphia'
+	      )
+	    );
+	  }
+	});
+
+	module.exports = WeatherMessage;
 
 /***/ }
 /******/ ]);

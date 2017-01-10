@@ -7,7 +7,7 @@ var Greeter = React.createClass({
   getDefaultProps: function () {
     return {
       name: 'World',
-      message: 'Watch me change by simply typing in the box!'
+      message: 'Watch me change by simply typing in the message box!'
     };
   },
   getInitialState: function () {

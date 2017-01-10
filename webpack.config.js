@@ -11,7 +11,10 @@ module.exports = {
       Nav: 'app/components/Nav.jsx',
       Greeter: 'app/components/Greeter/Greeter.jsx',
       GreeterForm: 'app/components/Greeter/GreeterForm.jsx',
-      GreeterMessage: 'app/components/Greeter/GreeterMessage.jsx'
+      GreeterMessage: 'app/components/Greeter/GreeterMessage.jsx',
+      Weather: 'app/components/Weather/Weather.jsx',
+      WeatherForm: 'app/components/Weather/WeatherForm.jsx',
+      WeatherMessage: 'app/components/Weather/WeatherMessage.jsx'
     },
     extensions: ['', '.js', '.jsx']
   },
