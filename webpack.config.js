@@ -9,9 +9,9 @@ module.exports = {
     alias: {
       Main: 'app/components/Main.jsx',
       Nav: 'app/components/Nav.jsx',
-      Greeter: 'app/components/Greeter.jsx',
-      GreeterForm: 'app/components/GreeterForm.jsx',
-      GreeterMessage: 'app/components/GreeterMessage.jsx'
+      Greeter: 'app/components/Greeter/Greeter.jsx',
+      GreeterForm: 'app/components/Greeter/GreeterForm.jsx',
+      GreeterMessage: 'app/components/Greeter/GreeterMessage.jsx'
     },
     extensions: ['', '.js', '.jsx']
   },
