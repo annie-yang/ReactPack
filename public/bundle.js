@@ -25082,17 +25082,20 @@
 
 	  getInitialState: function getInitialState() {
 	    return {
-	      location: 'Turlock',
-	      temp: 88
+	      isLoading: false
 	    };
 	  },
 	  handleSearch: function handleSearch(location) {
 	    var that = this;
 
+	    that.setState({
+	      isLoading: true
+	    });
 	    openWeatherMap.getTemp(location).then(function (temp) {
 	      that.setState({
 	        location: location,
-	        temp: temp
+	        temp: temp,
+	        isLoading: false
 	      });
 	    }, function (errorMessage) {
 	      alert(errorMessage);
@@ -25100,9 +25103,22 @@
 	  },
 	  render: function render() {
 	    var _state = this.state,
+	        isLoading = _state.isLoading,
 	        temp = _state.temp,
 	        location = _state.location;
 
+
+	    function renderMessage() {
+	      if (isLoading) {
+	        return React.createElement(
+	          'h3',
+	          null,
+	          ' Fetching weather...'
+	        );
+	      } else if (temp && location) {
+	        return React.createElement(WeatherMessage, { temp: temp, location: location });
+	      }
+	    }
 
 	    return React.createElement(
 	      'div',
@@ -25113,7 +25129,7 @@
 	        'Weather Component'
 	      ),
 	      React.createElement(WeatherForm, { onSearch: this.handleSearch }),
-	      React.createElement(WeatherMessage, { temp: temp, location: location })
+	      renderMessage()
 	    );
 	  }
 	});
@@ -25169,49 +25185,39 @@
 
 	var React = __webpack_require__(1);
 
-	var WeatherMessage = React.createClass({
-	  displayName: 'WeatherMessage',
+	var WeatherMessage = function WeatherMessage(_ref) {
+	  var temp = _ref.temp,
+	      location = _ref.location;
 
-	  render: function render() {
-	    var _props = this.props,
-	        temp = _props.temp,
-	        location = _props.location;
-
-
-	    return React.createElement(
-	      'div',
+	  return React.createElement(
+	    'div',
+	    null,
+	    React.createElement(
+	      'h3',
 	      null,
-	      React.createElement(
-	        'h3',
-	        null,
-	        'It\'s ',
-	        temp,
-	        ' \xB0F in ',
-	        location
-	      ),
-	      React.createElement(
-	        'h2',
-	        null,
-	        'How to convert Fahrenheit to Celcius:'
-	      ),
-	      React.createElement(
-	        'p',
-	        null,
-	        'Formula: T(\xB0C) = (n\xB0F - 32) \xD7 5/9 = n\xB0C'
-	      ),
-	      React.createElement(
-	        'p',
-	        null,
-	        'Example: Fahrenheit: 50 '
-	      ),
-	      React.createElement(
-	        'p',
-	        null,
-	        ' (50 - 32) x 5/9 = 13\xB0C'
-	      )
-	    );
-	  }
-	});
+	      'It\'s ',
+	      temp,
+	      ' \xB0F in ',
+	      location
+	    ),
+	    React.createElement('br', null),
+	    React.createElement(
+	      'h4',
+	      null,
+	      'How to convert Fahrenheit to Celcius:'
+	    ),
+	    React.createElement(
+	      'p',
+	      null,
+	      'Formula: T(\xB0C) = (n\xB0F - 32) \xD7 5/9 = n\xB0C'
+	    ),
+	    React.createElement(
+	      'p',
+	      null,
+	      'Example: If Fahrenheit is 50: (50 - 32) x 5/9 = 13\xB0C'
+	    )
+	  );
+	};
 
 	module.exports = WeatherMessage;
 
