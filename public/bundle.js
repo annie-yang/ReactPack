@@ -24947,29 +24947,75 @@
 	var Nav = React.createClass({
 	  displayName: 'Nav',
 
+	  onSearch: function onSearch(e) {
+	    e.preventDefault();
+	    alert('Not yet wired up');
+	  },
 	  render: function render() {
 	    return React.createElement(
 	      'div',
-	      null,
+	      { className: 'top-bar' },
 	      React.createElement(
-	        'h3',
-	        null,
-	        'Nav component'
+	        'div',
+	        { className: 'top-bar-left' },
+	        React.createElement(
+	          'ul',
+	          { className: 'menu' },
+	          React.createElement(
+	            'li',
+	            { className: 'menu-text' },
+	            'React Pack'
+	          ),
+	          React.createElement(
+	            'li',
+	            null,
+	            React.createElement(
+	              IndexLink,
+	              { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	              'Main'
+	            )
+	          ),
+	          React.createElement(
+	            'li',
+	            null,
+	            React.createElement(
+	              Link,
+	              { to: '/greeter', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	              'Greeter'
+	            )
+	          ),
+	          React.createElement(
+	            'li',
+	            null,
+	            React.createElement(
+	              Link,
+	              { to: '/weather', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	              'Weather'
+	            )
+	          )
+	        )
 	      ),
 	      React.createElement(
-	        IndexLink,
-	        { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	        'Main'
-	      ),
-	      React.createElement(
-	        Link,
-	        { to: '/greeter', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	        'Greeter'
-	      ),
-	      React.createElement(
-	        Link,
-	        { to: '/weather', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	        'Weather'
+	        'div',
+	        { className: 'top-bar-right' },
+	        React.createElement(
+	          'form',
+	          { onSubmit: this.onSearch },
+	          React.createElement(
+	            'ul',
+	            { className: 'menu' },
+	            React.createElement(
+	              'li',
+	              null,
+	              React.createElement('input', { type: 'search', placeholder: 'Search weather' })
+	            ),
+	            React.createElement(
+	              'li',
+	              null,
+	              React.createElement('input', { type: 'submit', className: 'button', value: 'Get Weather' })
+	            )
+	          )
+	        )
 	      )
 	    );
 	  }
