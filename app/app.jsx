@@ -12,8 +12,8 @@ $(document).foundation();
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={Main}>
-      <Route path="greeter" component={Greeter}/>
       <Route path="Weather" component={Weather}/>
+      <IndexRoute component={Greeter}/>
     </Route>
   </Router>,
   document.getElementById('app')

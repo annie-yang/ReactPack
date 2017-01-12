@@ -16,8 +16,6 @@ var Greeter = React.createClass({
         message: this.props.message
     };
   },
-  // parent component
-  // sets state
   handleNewData: function (updates) {
     this.setState(updates);
   },

@@ -116,8 +116,8 @@
 	  React.createElement(
 	    Route,
 	    { path: '/', component: Main },
-	    React.createElement(Route, { path: 'greeter', component: Greeter }),
-	    React.createElement(Route, { path: 'Weather', component: Weather })
+	    React.createElement(Route, { path: 'Weather', component: Weather }),
+	    React.createElement(IndexRoute, { component: Greeter })
 	  )
 	), document.getElementById('app'));
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
@@ -24912,23 +24912,22 @@
 
 	var Nav = __webpack_require__(224);
 
-	var Main = React.createClass({
-	  displayName: 'Main',
-
-	  render: function render() {
-	    return React.createElement(
+	var Main = function Main(props) {
+	  return React.createElement(
+	    'div',
+	    null,
+	    React.createElement(Nav, null),
+	    React.createElement(
 	      'div',
-	      null,
-	      React.createElement(Nav, null),
+	      { className: 'row' },
 	      React.createElement(
-	        'h2',
-	        null,
-	        'Main component'
-	      ),
-	      this.props.children
-	    );
-	  }
-	});
+	        'div',
+	        { className: 'columns medium-6 large-4 small-centered' },
+	        props.children
+	      )
+	    )
+	  );
+	};
 
 	module.exports = Main;
 
@@ -24972,15 +24971,6 @@
 	            React.createElement(
 	              IndexLink,
 	              { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	              'Main'
-	            )
-	          ),
-	          React.createElement(
-	            'li',
-	            null,
-	            React.createElement(
-	              Link,
-	              { to: '/greeter', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
 	              'Greeter'
 	            )
 	          ),
@@ -25049,8 +25039,6 @@
 	      message: this.props.message
 	    };
 	  },
-	  // parent component
-	  // sets state
 	  handleNewData: function handleNewData(updates) {
 	    this.setState(updates);
 	  },
@@ -25096,7 +25084,7 @@
 	        '!'
 	      ),
 	      React.createElement(
-	        'p',
+	        'h5',
 	        null,
 	        message
 	      )
@@ -25147,7 +25135,7 @@
 	      React.createElement(
 	        'div',
 	        null,
-	        React.createElement('input', { type: 'text', ref: 'referenceToName', placeholder: 'Enter name' })
+	        React.createElement('input', { type: 'text', ref: 'referenceToName', placeholder: 'Enter your name' })
 	      ),
 	      React.createElement(
 	        'div',
@@ -25229,7 +25217,7 @@
 	      null,
 	      React.createElement(
 	        'h3',
-	        null,
+	        { className: 'text-center' },
 	        'Weather Component'
 	      ),
 	      React.createElement(WeatherForm, { onSearch: this.handleSearch }),
