@@ -25148,7 +25148,7 @@
 	        null,
 	        React.createElement(
 	          'button',
-	          null,
+	          { className: 'button hollow' },
 	          'Submit'
 	        )
 	      )
@@ -25204,7 +25204,7 @@
 	      if (isLoading) {
 	        return React.createElement(
 	          'h3',
-	          null,
+	          { className: 'text-center' },
 	          ' Fetching weather...'
 	        );
 	      } else if (temp && location) {
@@ -25216,7 +25216,7 @@
 	      'div',
 	      null,
 	      React.createElement(
-	        'h3',
+	        'h1',
 	        { className: 'text-center' },
 	        'Weather Component'
 	      ),
@@ -25259,7 +25259,7 @@
 	        React.createElement('input', { type: 'text', ref: "location" }),
 	        React.createElement(
 	          'button',
-	          null,
+	          { className: 'button expanded hollow' },
 	          'Get Weather'
 	        )
 	      )
@@ -25273,7 +25273,7 @@
 /* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	var React = __webpack_require__(8);
 
@@ -25282,31 +25282,31 @@
 	      location = _ref.location;
 
 	  return React.createElement(
-	    'div',
+	    "div",
 	    null,
 	    React.createElement(
-	      'h3',
-	      null,
-	      'It\'s ',
+	      "h3",
+	      { className: "text-center" },
+	      "It's ",
 	      temp,
-	      ' \xB0F in ',
+	      " \xB0F in ",
 	      location
 	    ),
-	    React.createElement('br', null),
+	    React.createElement("br", null),
 	    React.createElement(
-	      'h4',
+	      "h4",
 	      null,
-	      'How to convert Fahrenheit to Celcius:'
+	      "How to convert Fahrenheit to Celcius:"
 	    ),
 	    React.createElement(
-	      'p',
+	      "p",
 	      null,
-	      'Formula: T(\xB0C) = (n\xB0F - 32) \xD7 5/9 = n\xB0C'
+	      "Formula: T(\xB0C) = (n\xB0F - 32) \xD7 5/9 = n\xB0C"
 	    ),
 	    React.createElement(
-	      'p',
+	      "p",
 	      null,
-	      'Example: If Fahrenheit is 50: (50 - 32) x 5/9 = 13\xB0C'
+	      "Example: If Fahrenheit is 50: (50 - 32) x 5/9 = 13\xB0C"
 	    )
 	  );
 	};
