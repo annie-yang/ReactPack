@@ -7,6 +7,13 @@
   font-family: $Google-font;
 }
 
-.top-bar, .top-bar ul{
+.top-bar{
   background-color: $nav-background;
+
+  ul{
+    background-color: $nav-background;
+  }
+  .active-link{
+    font-weight: bold;
+  }
 }

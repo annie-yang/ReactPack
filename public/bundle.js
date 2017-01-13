@@ -25555,7 +25555,7 @@
 	            null,
 	            React.createElement(
 	              IndexLink,
-	              { className: 'nav-text', to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	              { className: 'nav-text', to: '/', activeClassName: 'active-link' },
 	              'Greeter'
 	            )
 	          ),
@@ -25564,7 +25564,7 @@
 	            null,
 	            React.createElement(
 	              Link,
-	              { className: 'nav-text', to: '/weather', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	              { className: 'nav-text', to: '/weather', activeClassName: 'active-link' },
 	              'Weather'
 	            )
 	          ),
@@ -25573,7 +25573,7 @@
 	            null,
 	            React.createElement(
 	              Link,
-	              { className: 'nav-text', to: '/timer', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	              { className: 'nav-text', to: '/timer', activeClassName: 'active-link' },
 	              'Timer'
 	            )
 	          ),
@@ -25582,7 +25582,7 @@
 	            null,
 	            React.createElement(
 	              Link,
-	              { className: 'nav-text', to: '/countdown', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	              { className: 'nav-text', to: '/countdown', activeClassName: 'active-link' },
 	              'Countdown'
 	            )
 	          )
@@ -27966,7 +27966,7 @@
 
 
 	// module
-	exports.push([module.id, ".nav-text {\n  font-family: \"Quicksand\", sans-serif;\n  font-size: 1.5rem; }\n\n.nav-button-text {\n  font-family: \"Quicksand\", sans-serif; }\n\n.top-bar, .top-bar ul {\n  background-color: white; }\n\ninput[type=search] {\n  box-shadow: none;\n  font-family: \"Quicksand\", sans-serif; }\n\ntextarea {\n  box-shadow: none;\n  font-family: \"Quicksand\", sans-serif; }\n\n.page-title {\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem;\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.textColor {\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n", ""]);
+	exports.push([module.id, ".nav-text {\n  font-family: \"Quicksand\", sans-serif;\n  font-size: 1.5rem; }\n\n.nav-button-text {\n  font-family: \"Quicksand\", sans-serif; }\n\n.top-bar {\n  background-color: white; }\n  .top-bar ul {\n    background-color: white; }\n  .top-bar .active-link {\n    font-weight: bold; }\n\ninput[type=search] {\n  box-shadow: none;\n  font-family: \"Quicksand\", sans-serif; }\n\ntextarea {\n  box-shadow: none;\n  font-family: \"Quicksand\", sans-serif; }\n\n.page-title {\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem;\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.textColor {\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n", ""]);
 
 	// exports
 
