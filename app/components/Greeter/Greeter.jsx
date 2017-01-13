@@ -26,7 +26,7 @@ var Greeter = React.createClass({
     return (
       <div className="page-title">
         <GreeterMessage name={name} message={message}/>
-        <GreeterForm  onNewData={this.handleNewData}/>
+        <GreeterForm onNewData={this.handleNewData}/>
       </div>
     );
   }

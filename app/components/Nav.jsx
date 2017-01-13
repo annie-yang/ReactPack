@@ -18,12 +18,12 @@ var Nav = React.createClass({
       <div className="top-bar">
         <div className="top-bar-left">
           <ul className="menu">
-            <li className="menu-text">React Pack</li>
+            <li className="menu-text nav-text">React Pack</li>
             <li>
-              <IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Greeter</IndexLink>
+              <IndexLink className="nav-text" to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Greeter</IndexLink>
             </li>
             <li>
-              <Link to="/weather" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Weather</Link>
+              <Link className="nav-text" to="/weather" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Weather</Link>
             </li>
           </ul>
         </div>
@@ -34,7 +34,7 @@ var Nav = React.createClass({
                 <input type="search" ref="searchReference" placeholder="Search weather by city"></input>
               </li>
               <li>
-                <input type="submit" className="button" value="Get Weather"></input>
+                <input type="submit" className="button nav-button-text" value="Get Weather"></input>
               </li>
             </ul>
           </form>

@@ -1,20 +1,35 @@
 $space-large: 2.5rem;
 $title-color: #6666ff;
+$Google-font: 'Quicksand', sans-serif;
+$font-size: 1.5rem;
 
 .page-title{
   margin-top: $space-large;
   margin-bottom: $space-large;
   color: $title-color;
+  font-family: $Google-font;
 }
 
 input[type=search]{
   box-shadow: none;
+  font-family: $Google-font;
 }
 
 textarea{
   box-shadow: none;
+  font-family: $Google-font;
 }
 
 .textColor{
   color: $title-color;
+  font-family: $Google-font;
+}
+
+.nav-text{
+  font-family: $Google-font;
+  font-size: $font-size;
+}
+
+.nav-button-text{
+  font-family: $Google-font;
 }

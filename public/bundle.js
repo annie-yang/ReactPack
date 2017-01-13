@@ -25543,7 +25543,7 @@
 	          { className: 'menu' },
 	          React.createElement(
 	            'li',
-	            { className: 'menu-text' },
+	            { className: 'menu-text nav-text' },
 	            'React Pack'
 	          ),
 	          React.createElement(
@@ -25551,7 +25551,7 @@
 	            null,
 	            React.createElement(
 	              IndexLink,
-	              { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	              { className: 'nav-text', to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
 	              'Greeter'
 	            )
 	          ),
@@ -25560,7 +25560,7 @@
 	            null,
 	            React.createElement(
 	              Link,
-	              { to: '/weather', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	              { className: 'nav-text', to: '/weather', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
 	              'Weather'
 	            )
 	          )
@@ -25583,7 +25583,7 @@
 	            React.createElement(
 	              'li',
 	              null,
-	              React.createElement('input', { type: 'submit', className: 'button', value: 'Get Weather' })
+	              React.createElement('input', { type: 'submit', className: 'button nav-button-text', value: 'Get Weather' })
 	            )
 	          )
 	        )
@@ -25872,7 +25872,7 @@
 	        React.createElement('input', { type: 'search', ref: "location", placeholder: 'Search weather by city' }),
 	        React.createElement(
 	          'button',
-	          { className: 'button expanded hollow' },
+	          { className: 'button expanded hollow textColor' },
 	          'Get Weather'
 	        )
 	      )
@@ -27900,7 +27900,7 @@
 
 
 	// module
-	exports.push([module.id, ".page-title {\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem;\n  color: #6666ff; }\n\ninput[type=search] {\n  box-shadow: none; }\n\ntextarea {\n  box-shadow: none; }\n\n.textColor {\n  color: #6666ff; }\n", ""]);
+	exports.push([module.id, ".page-title {\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem;\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\ninput[type=search] {\n  box-shadow: none;\n  font-family: \"Quicksand\", sans-serif; }\n\ntextarea {\n  box-shadow: none;\n  font-family: \"Quicksand\", sans-serif; }\n\n.textColor {\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.nav-text {\n  font-family: \"Quicksand\", sans-serif;\n  font-size: 1.5rem; }\n\n.nav-button-text {\n  font-family: \"Quicksand\", sans-serif; }\n", ""]);
 
 	// exports
 
