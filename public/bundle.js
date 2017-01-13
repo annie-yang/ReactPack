@@ -25522,7 +25522,14 @@
 
 	  onSearch: function onSearch(e) {
 	    e.preventDefault();
-	    alert('Not yet wired up');
+
+	    var location = this.refs.searchReference.value;
+	    var encodedLocation = encodeURIComponent(location);
+
+	    if (location.length > 0) {
+	      this.refs.searchReference.value = '';
+	      window.location.hash = '#/weather?location=' + encodedLocation;
+	    }
 	  },
 	  render: function render() {
 	    return React.createElement(
@@ -25571,7 +25578,7 @@
 	            React.createElement(
 	              'li',
 	              null,
-	              React.createElement('input', { type: 'search', placeholder: 'Search weather by city' })
+	              React.createElement('input', { type: 'search', ref: 'searchReference', placeholder: 'Search weather by city' })
 	            ),
 	            React.createElement(
 	              'li',
@@ -25757,8 +25764,11 @@
 
 	    that.setState({
 	      isLoading: true,
-	      errorMessage: undefined
+	      errorMessage: undefined,
+	      location: undefined,
+	      temp: undefined
 	    });
+
 	    openWeatherMap.getTemp(location).then(function (temp) {
 	      that.setState({
 	        location: location,
@@ -25772,7 +25782,22 @@
 	      });
 	    });
 	  },
-	  componentDidMount: function componentDidMount() {},
+	  componentDidMount: function componentDidMount() {
+	    var location = this.props.location.query.location;
+
+	    if (location && location.length > 0) {
+	      this.handleSearch(location);
+	      window.location.hash = '/weather';
+	    }
+	  },
+	  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
+	    var location = newProps.location.query.location;
+
+	    if (location && location.length > 0) {
+	      this.handleSearch(location);
+	      window.location.hash = '/weather';
+	    }
+	  },
 	  render: function render() {
 	    var _state = this.state,
 	        isLoading = _state.isLoading,
@@ -25785,7 +25810,7 @@
 	      if (isLoading) {
 	        return React.createElement(
 	          'h3',
-	          { className: 'text-center' },
+	          { className: 'text-center textColor' },
 	          ' Fetching weather...'
 	        );
 	      } else if (temp && location) {
