@@ -25,6 +25,12 @@ var Nav = React.createClass({
             <li>
               <Link className="nav-text" to="/weather" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Weather</Link>
             </li>
+            <li>
+              <Link className="nav-text" to="/timer" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Timer</Link>
+            </li>
+            <li>
+              <Link className="nav-text" to="/countdown" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Countdown</Link>
+            </li>
           </ul>
         </div>
         <div className="top-bar-right">

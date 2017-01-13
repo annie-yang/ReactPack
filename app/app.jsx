@@ -5,6 +5,8 @@ var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 var Main = require('Main');
 var Greeter = require('Greeter');
 var Weather = require('Weather');
+var Timer = require('Timer');
+var Countdown = require('Countdown');
 
 require('style!css!foundation-sites/dist/foundation.min.css')
 $(document).foundation();
@@ -15,6 +17,8 @@ ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={Main}>
       <Route path="Weather" component={Weather}/>
+      <Route path="Timer" component={Timer}/>
+      <Route path="Countdown" component={Countdown}/>
       <IndexRoute component={Greeter}/>
     </Route>
   </Router>,

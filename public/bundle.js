@@ -106,11 +106,13 @@
 	var Main = __webpack_require__(229);
 	var Greeter = __webpack_require__(231);
 	var Weather = __webpack_require__(234);
+	var Timer = __webpack_require__(265);
+	var Countdown = __webpack_require__(266);
 
-	__webpack_require__(265);
+	__webpack_require__(267);
 	$(document).foundation();
 
-	__webpack_require__(269);
+	__webpack_require__(271);
 
 	ReactDOM.render(React.createElement(
 	  Router,
@@ -119,6 +121,8 @@
 	    Route,
 	    { path: '/', component: Main },
 	    React.createElement(Route, { path: 'Weather', component: Weather }),
+	    React.createElement(Route, { path: 'Timer', component: Timer }),
+	    React.createElement(Route, { path: 'Countdown', component: Countdown }),
 	    React.createElement(IndexRoute, { component: Greeter })
 	  )
 	), document.getElementById('app'));
@@ -25563,6 +25567,24 @@
 	              { className: 'nav-text', to: '/weather', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
 	              'Weather'
 	            )
+	          ),
+	          React.createElement(
+	            'li',
+	            null,
+	            React.createElement(
+	              Link,
+	              { className: 'nav-text', to: '/timer', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	              'Timer'
+	            )
+	          ),
+	          React.createElement(
+	            'li',
+	            null,
+	            React.createElement(
+	              Link,
+	              { className: 'nav-text', to: '/countdown', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	              'Countdown'
+	            )
 	          )
 	        )
 	      ),
@@ -27521,13 +27543,57 @@
 /* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	var React = __webpack_require__(8);
+
+	var Timer = React.createClass({
+	  displayName: 'Timer',
+
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      null,
+	      'Timer component'
+	    );
+	  }
+	});
+
+	module.exports = Timer;
+
+/***/ },
+/* 266 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(8);
+
+	var Countdown = React.createClass({
+	  displayName: 'Countdown',
+
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      null,
+	      'Countdown component'
+	    );
+	  }
+	});
+
+	module.exports = Countdown;
+
+/***/ },
+/* 267 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(266);
+	var content = __webpack_require__(268);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(268)(content, {});
+	var update = __webpack_require__(270)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -27544,10 +27610,10 @@
 	}
 
 /***/ },
-/* 266 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(267)();
+	exports = module.exports = __webpack_require__(269)();
 	// imports
 
 
@@ -27558,7 +27624,7 @@
 
 
 /***/ },
-/* 267 */
+/* 269 */
 /***/ function(module, exports) {
 
 	/*
@@ -27614,7 +27680,7 @@
 
 
 /***/ },
-/* 268 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -27866,16 +27932,16 @@
 
 
 /***/ },
-/* 269 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(270);
+	var content = __webpack_require__(272);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(268)(content, {});
+	var update = __webpack_require__(270)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -27892,15 +27958,15 @@
 	}
 
 /***/ },
-/* 270 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(267)();
+	exports = module.exports = __webpack_require__(269)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".page-title {\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem;\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\ninput[type=search] {\n  box-shadow: none;\n  font-family: \"Quicksand\", sans-serif; }\n\ntextarea {\n  box-shadow: none;\n  font-family: \"Quicksand\", sans-serif; }\n\n.textColor {\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.nav-text {\n  font-family: \"Quicksand\", sans-serif;\n  font-size: 1.5rem; }\n\n.nav-button-text {\n  font-family: \"Quicksand\", sans-serif; }\n", ""]);
+	exports.push([module.id, ".nav-text {\n  font-family: \"Quicksand\", sans-serif;\n  font-size: 1.5rem; }\n\n.nav-button-text {\n  font-family: \"Quicksand\", sans-serif; }\n\n.top-bar, .top-bar ul {\n  background-color: white; }\n\ninput[type=search] {\n  box-shadow: none;\n  font-family: \"Quicksand\", sans-serif; }\n\ntextarea {\n  box-shadow: none;\n  font-family: \"Quicksand\", sans-serif; }\n\n.page-title {\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem;\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.textColor {\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n", ""]);
 
 	// exports
 
