@@ -110,6 +110,8 @@
 	__webpack_require__(258);
 	$(document).foundation();
 
+	__webpack_require__(262);
+
 	ReactDOM.render(React.createElement(
 	  Router,
 	  { history: hashHistory },
@@ -24997,7 +24999,7 @@
 	            React.createElement(
 	              'li',
 	              null,
-	              React.createElement('input', { type: 'search', placeholder: 'Search weather' })
+	              React.createElement('input', { type: 'search', placeholder: 'Search weather by city' })
 	            ),
 	            React.createElement(
 	              'li',
@@ -25048,7 +25050,7 @@
 
 	    return React.createElement(
 	      'div',
-	      null,
+	      { className: 'page-title' },
 	      React.createElement(GreeterMessage, { name: name, message: message }),
 	      React.createElement(GreeterForm, { onNewData: this.handleNewData })
 	    );
@@ -25135,7 +25137,7 @@
 	      React.createElement(
 	        'div',
 	        null,
-	        React.createElement('input', { type: 'text', ref: 'referenceToName', placeholder: 'Enter your name' })
+	        React.createElement('input', { type: 'search', ref: 'referenceToName', placeholder: 'Enter your name' })
 	      ),
 	      React.createElement(
 	        'div',
@@ -25230,8 +25232,8 @@
 	      null,
 	      React.createElement(
 	        'h1',
-	        { className: 'text-center' },
-	        'Weather Component'
+	        { className: 'text-center page-title' },
+	        'Weather'
 	      ),
 	      React.createElement(WeatherForm, { onSearch: this.handleSearch }),
 	      renderMessage(),
@@ -25270,7 +25272,7 @@
 	      React.createElement(
 	        'form',
 	        { onSubmit: this.onFormSubmit },
-	        React.createElement('input', { type: 'text', ref: "location" }),
+	        React.createElement('input', { type: 'search', ref: "location", placeholder: 'Search weather by city' }),
 	        React.createElement(
 	          'button',
 	          { className: 'button expanded hollow' },
@@ -27251,6 +27253,46 @@
 		if(oldSrc)
 			URL.revokeObjectURL(oldSrc);
 	}
+
+
+/***/ },
+/* 262 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(263);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(261)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./app.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./app.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 263 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(260)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".page-title{\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem;\n}\n\ninput[type=search]{\n  box-shadow: none;\n}\n\ntextarea{\n  box-shadow: none;\n}\n", ""]);
+
+	// exports
 
 
 /***/ }

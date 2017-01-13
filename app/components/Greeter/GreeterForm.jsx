@@ -28,7 +28,7 @@ var GreeterForm = React.createClass({
     return (
       <form onSubmit={this.onFormSubmit}>
         <div>
-          <input type="text" ref="referenceToName" placeholder="Enter your name"/>
+          <input type="search" ref="referenceToName" placeholder="Enter your name"/>
         </div>
         <div>
           <br/>
