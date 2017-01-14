@@ -35,7 +35,8 @@ module.exports = {
       ErrorModal: 'app/components/Weather/ErrorModal.jsx',
       applicationStyles: 'app/styles/app.scss',
       Timer: 'app/components/Timer/Timer.jsx',
-      Countdown: 'app/components/Timer/Countdown.jsx'
+      Countdown: 'app/components/Timer/Countdown.jsx',
+      Clock: 'app/components/Timer/Clock.jsx'
     },
     extensions: ['', '.js', '.jsx']
   },
