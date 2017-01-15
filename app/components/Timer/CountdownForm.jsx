@@ -21,7 +21,7 @@ var CountdownForm = React.createClass({
         </form>
         <div>
           <br/>
-          <h4 className="countdown-form-text">Convert minutes to seconds:</h4>
+          <h4 className="countdown-form-text">How to Convert minutes to seconds:</h4>
           <p className="countdown-form-text">Formula: minutes x 60 = seconds</p>
           <p className="countdown-form-text">Example: 30 minutes x 60 = 1800 seconds</p>
         </div>
