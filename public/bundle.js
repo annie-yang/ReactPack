@@ -27681,7 +27681,7 @@
 	        React.createElement('input', { type: 'text', ref: 'referenceSeconds', placeholder: 'Enter time in seconds' }),
 	        React.createElement(
 	          'button',
-	          { className: 'button expanded' },
+	          { className: 'button expanded clock-button' },
 	          'Start'
 	        )
 	      )
@@ -28074,7 +28074,7 @@
 
 
 	// module
-	exports.push([module.id, ".button.hollow {\n  color: #6666ff;\n  border-color: #6666ff; }\n\n.nav-text {\n  font-family: \"Quicksand\", sans-serif;\n  font-size: 1.5rem; }\n\n.nav-button-text {\n  font-family: \"Quicksand\", sans-serif; }\n\n.nav-button-text:hover {\n  color: #6666ff;\n  border-color: #6666ff;\n  background-color: #cdcdff; }\n\n.top-bar {\n  background-color: white; }\n  .top-bar ul {\n    background-color: white; }\n  .top-bar .active-link {\n    font-weight: bold;\n    color: #6666ff; }\n\ninput[type=search] {\n  box-shadow: none;\n  font-family: \"Quicksand\", sans-serif; }\n\ntextarea {\n  box-shadow: none;\n  font-family: \"Quicksand\", sans-serif; }\n\n.page-title {\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem;\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.textColor {\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.clock {\n  align-items: center;\n  background-color: #e6e6ff;\n  border: 2px solid #6666ff;\n  border-radius: 50%;\n  display: flex;\n  height: 14rem;\n  justify-content: center;\n  margin: 4rem auto;\n  width: 14rem; }\n\n.clock-text {\n  color: #6767ff;\n  font-size: 2.25rem;\n  font-weight: 300; }\n", ""]);
+	exports.push([module.id, ".button.hollow {\n  color: #6666ff;\n  border-color: #6666ff; }\n\n.nav-text {\n  font-family: \"Quicksand\", sans-serif;\n  font-size: 1.5rem; }\n\n.nav-button-text {\n  font-family: \"Quicksand\", sans-serif; }\n\n.nav-button-text:hover {\n  color: #6666ff;\n  border-color: #6666ff;\n  background-color: #cdcdff; }\n\n.top-bar {\n  background-color: white; }\n  .top-bar ul {\n    background-color: white; }\n  .top-bar .active-link {\n    font-weight: bold;\n    color: #6666ff; }\n\ninput[type=search] {\n  box-shadow: none;\n  font-family: \"Quicksand\", sans-serif; }\n\ntextarea {\n  box-shadow: none;\n  font-family: \"Quicksand\", sans-serif; }\n\n.page-title {\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem;\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.textColor {\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.clock {\n  align-items: center;\n  background-color: #e6e6ff;\n  border: 2px solid #6666ff;\n  border-radius: 50%;\n  display: flex;\n  height: 14rem;\n  justify-content: center;\n  margin: 4rem auto;\n  width: 14rem; }\n\n.clock-text {\n  color: #6767ff;\n  font-size: 2.25rem;\n  font-weight: 300; }\n\n.clock-button {\n  background-color: #6666ff; }\n", ""]);
 
 	// exports
 
