@@ -109,10 +109,10 @@
 	var Timer = __webpack_require__(265);
 	var Countdown = __webpack_require__(266);
 
-	__webpack_require__(269);
+	__webpack_require__(270);
 	$(document).foundation();
 
-	__webpack_require__(273);
+	__webpack_require__(274);
 
 	ReactDOM.render(React.createElement(
 	  Router,
@@ -27571,6 +27571,7 @@
 
 	var Clock = __webpack_require__(267);
 	var CountdownForm = __webpack_require__(268);
+	var Controls = __webpack_require__(269);
 
 	var Countdown = React.createClass({
 	  displayName: 'Countdown',
@@ -27612,15 +27613,31 @@
 	      countdownStatus: 'started'
 	    });
 	  },
+	  handleStatusChange: function handleStatusChange(newStatus) {
+	    this.setState({ countdownStatus: newStatus });
+	  },
 	  render: function render() {
-	    var count = this.state.count;
+	    var _this2 = this;
 
+	    var _state = this.state,
+	        count = _state.count,
+	        countdownStatus = _state.countdownStatus;
+
+
+	    var renderControlArea = function renderControlArea() {
+	      if (countdownStatus !== 'stopped') {
+	        return React.createElement(Controls, { countdownStatus: countdownStatus, onStatusChange: _this2.handleStatusChange });
+	      } else {
+	        return React.createElement(CountdownForm, { onSetCountdown: _this2.handleSetCountdown });
+	      }
+	    };
 
 	    return React.createElement(
 	      'div',
 	      null,
 	      React.createElement(Clock, { totalSeconds: count }),
-	      React.createElement(CountdownForm, { onSetCountdown: this.handleSetCountdown })
+	      renderControlArea(),
+	      '      '
 	    );
 	  }
 	});
@@ -27742,13 +27759,72 @@
 /* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	var React = __webpack_require__(8);
+
+	var Controls = React.createClass({
+	  displayName: 'Controls',
+
+	  propTypes: {
+	    countdownStatus: React.PropTypes.string.isRequired,
+	    onStatusChange: React.PropTypes.func.isRequired
+	  },
+	  onStatusChange: function onStatusChange(newStatus) {
+	    var _this = this;
+
+	    return function () {
+	      _this.props.onStatusChange(newStatus);
+	    };
+	  },
+	  render: function render() {
+	    var _this2 = this;
+
+	    var countdownStatus = this.props.countdownStatus;
+
+
+	    var renderStartStopButton = function renderStartStopButton() {
+	      if (countdownStatus === 'started') {
+	        return React.createElement(
+	          'button',
+	          { className: 'button secondary', onClick: _this2.onStatusChange('paused') },
+	          'Pause'
+	        );
+	      } else if (countdownStatus === 'paused') {
+	        return React.createElement(
+	          'button',
+	          { className: 'button primary', onClick: _this2.onStatusChange('started') },
+	          'Start'
+	        );
+	      }
+	    };
+
+	    return React.createElement(
+	      'div',
+	      { className: 'controls' },
+	      renderStartStopButton(),
+	      React.createElement(
+	        'button',
+	        { className: 'button alert hollow', onClick: this.onStatusChange('stopped') },
+	        'Clear'
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Controls;
+
+/***/ },
+/* 270 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(270);
+	var content = __webpack_require__(271);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(272)(content, {});
+	var update = __webpack_require__(273)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -27765,10 +27841,10 @@
 	}
 
 /***/ },
-/* 270 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(271)();
+	exports = module.exports = __webpack_require__(272)();
 	// imports
 
 
@@ -27779,7 +27855,7 @@
 
 
 /***/ },
-/* 271 */
+/* 272 */
 /***/ function(module, exports) {
 
 	/*
@@ -27835,7 +27911,7 @@
 
 
 /***/ },
-/* 272 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -28087,16 +28163,16 @@
 
 
 /***/ },
-/* 273 */
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(274);
+	var content = __webpack_require__(275);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(272)(content, {});
+	var update = __webpack_require__(273)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -28113,15 +28189,15 @@
 	}
 
 /***/ },
-/* 274 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(271)();
+	exports = module.exports = __webpack_require__(272)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".button.hollow {\n  color: #6666ff;\n  border-color: #6666ff; }\n\n.nav-text {\n  font-family: \"Quicksand\", sans-serif;\n  font-size: 1.5rem; }\n\n.nav-button-text {\n  font-family: \"Quicksand\", sans-serif; }\n\n.nav-button-text:hover {\n  color: #6666ff;\n  border-color: #6666ff;\n  background-color: #cdcdff; }\n\n.top-bar {\n  background-color: white; }\n  .top-bar ul {\n    background-color: white; }\n  .top-bar .active-link {\n    font-weight: bold;\n    color: #6666ff; }\n\ninput[type=search] {\n  box-shadow: none;\n  font-family: \"Quicksand\", sans-serif; }\n\ntextarea {\n  box-shadow: none;\n  font-family: \"Quicksand\", sans-serif; }\n\n.page-title {\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem;\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.textColor {\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.clock {\n  align-items: center;\n  background-color: #e6e6ff;\n  border: 2px solid #6666ff;\n  border-radius: 50%;\n  display: flex;\n  height: 14rem;\n  justify-content: center;\n  margin: 4rem auto;\n  width: 14rem; }\n\n.clock-text {\n  color: #6767ff;\n  font-size: 2.25rem;\n  font-weight: 300; }\n\n.clock-button {\n  background-color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.countdown-form-text {\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n", ""]);
+	exports.push([module.id, ".button.hollow {\n  color: #6666ff;\n  border-color: #6666ff; }\n\n.nav-text {\n  font-family: \"Quicksand\", sans-serif;\n  font-size: 1.5rem; }\n\n.nav-button-text {\n  font-family: \"Quicksand\", sans-serif; }\n\n.nav-button-text:hover {\n  color: #6666ff;\n  border-color: #6666ff;\n  background-color: #cdcdff; }\n\n.top-bar {\n  background-color: white; }\n  .top-bar ul {\n    background-color: white; }\n  .top-bar .active-link {\n    font-weight: bold;\n    color: #6666ff; }\n\ninput[type=search] {\n  box-shadow: none;\n  font-family: \"Quicksand\", sans-serif; }\n\ntextarea {\n  box-shadow: none;\n  font-family: \"Quicksand\", sans-serif; }\n\n.page-title {\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem;\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.textColor {\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.clock {\n  align-items: center;\n  background-color: #e6e6ff;\n  border: 2px solid #6666ff;\n  border-radius: 50%;\n  display: flex;\n  height: 14rem;\n  justify-content: center;\n  margin: 4rem auto;\n  width: 14rem; }\n\n.clock-text {\n  color: #6767ff;\n  font-size: 2.25rem;\n  font-weight: 300; }\n\n.clock-button {\n  background-color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.countdown-form-text {\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.controls {\n  display: flex;\n  justify-content: center; }\n  .controls .button {\n    padding: .75rem 3rem; }\n  .controls .button:first-child {\n    margin-right: 1.5rem; }\n", ""]);
 
 	// exports
 
