@@ -14,9 +14,19 @@
 
   .button{
     padding: .75rem 3rem;
+    font-family: $Google-font;
   }
 
   .button:first-child{
     margin-right: 1.5rem;
+    background-color: $countdown-button-color;
+    font-family: $Google-font;
   }
+  .button:first-child:hover{
+    background-color: $countdown-text-hover-color;
+  }
+}
+
+.clock-text{
+  font-family: $Google-font;
 }
