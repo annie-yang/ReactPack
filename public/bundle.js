@@ -27598,8 +27598,8 @@
 	    }
 	  },
 	  componentWillUnmount: function componentWillUnmount() {
-	    clearInterval(this.timer); // clear timer
-	    this.timer = undefined; // clean up the variable
+	    clearInterval(this.timer);
+	    this.timer = undefined;
 	  },
 	  startTimer: function startTimer() {
 	    var _this = this;
@@ -27643,6 +27643,11 @@
 	    return React.createElement(
 	      'div',
 	      null,
+	      React.createElement(
+	        'h1',
+	        { className: 'countdown-title' },
+	        'Countdown'
+	      ),
 	      React.createElement(Clock, { totalSeconds: count }),
 	      renderControlArea(),
 	      '      '
@@ -27651,34 +27656,6 @@
 	});
 
 	module.exports = Countdown;
-
-	/*
-	  NOTES:
-	    gets fired before the fact
-	    takes in next props and next state
-
-	    componentWillUpdate: function(nextProps, nextState){
-
-	    },
-
-	    ------------------------------------------------
-	    component always get fired first
-	    gets loaded when switching tabs
-	    component gets rendered to the screen, the component will mount and lifecycle method gets called
-
-	    componentWillMount: function(){
-	      console.log('componentWillMount');
-	    },
-
-	    ------------------------------------------------
-	    gets fired right after everything gets rendered in the DOM
-	    gets fired after "componentWillMount"
-	    access to any refs if want to do any updating
-
-	    componentDidmount:function(){
-	      console.log('componentDidmount');
-	    },
-	*/
 
 /***/ },
 /* 267 */
@@ -28233,7 +28210,7 @@
 
 
 	// module
-	exports.push([module.id, ".button.hollow {\n  color: #6666ff;\n  border-color: #6666ff; }\n\n.nav-text {\n  font-family: \"Quicksand\", sans-serif;\n  font-size: 1.5rem; }\n\n.nav-button-text {\n  font-family: \"Quicksand\", sans-serif; }\n\n.nav-button-text:hover {\n  color: #6666ff;\n  border-color: #6666ff;\n  background-color: #cdcdff; }\n\n.top-bar {\n  background-color: white; }\n  .top-bar ul {\n    background-color: white; }\n  .top-bar .active-link {\n    font-weight: bold;\n    color: #6666ff; }\n\ninput[type=search] {\n  box-shadow: none;\n  font-family: \"Quicksand\", sans-serif; }\n\ntextarea {\n  box-shadow: none;\n  font-family: \"Quicksand\", sans-serif; }\n\n.page-title {\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem;\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.textColor {\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.clock {\n  align-items: center;\n  background-color: #e6e6ff;\n  border: 2px solid #6666ff;\n  border-radius: 50%;\n  display: flex;\n  height: 14rem;\n  justify-content: center;\n  margin: 4rem auto;\n  width: 14rem; }\n\n.clock-text {\n  color: #6767ff;\n  font-size: 2.25rem;\n  font-weight: 300; }\n\n.clock-button {\n  background-color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.countdown-form-text {\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.controls {\n  display: flex;\n  justify-content: center; }\n  .controls .button {\n    padding: .75rem 3rem;\n    font-family: \"Quicksand\", sans-serif; }\n  .controls .button:first-child {\n    margin-right: 1.5rem;\n    background-color: #6666ff;\n    font-family: \"Quicksand\", sans-serif; }\n  .controls .button:first-child:hover {\n    background-color: #1583cc; }\n\n.clock-text {\n  font-family: \"Quicksand\", sans-serif; }\n", ""]);
+	exports.push([module.id, ".button.hollow {\n  color: #6666ff;\n  border-color: #6666ff; }\n\n.nav-text {\n  font-family: \"Quicksand\", sans-serif;\n  font-size: 1.5rem; }\n\n.nav-button-text {\n  font-family: \"Quicksand\", sans-serif; }\n\n.nav-button-text:hover {\n  color: #6666ff;\n  border-color: #6666ff;\n  background-color: #cdcdff; }\n\n.top-bar {\n  background-color: white; }\n  .top-bar ul {\n    background-color: white; }\n  .top-bar .active-link {\n    font-weight: bold;\n    color: #6666ff; }\n\ninput[type=search] {\n  box-shadow: none;\n  font-family: \"Quicksand\", sans-serif; }\n\ntextarea {\n  box-shadow: none;\n  font-family: \"Quicksand\", sans-serif; }\n\n.page-title {\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem;\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.textColor {\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.clock-button {\n  background-color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.countdown-form-text {\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif; }\n\n.controls {\n  display: flex;\n  justify-content: center; }\n  .controls .button {\n    padding: .75rem 3rem;\n    font-family: \"Quicksand\", sans-serif; }\n  .controls .button:first-child {\n    margin-right: 1.5rem;\n    background-color: #6666ff;\n    font-family: \"Quicksand\", sans-serif; }\n  .controls .button:first-child:hover {\n    background-color: #1583cc; }\n\n.clock-text {\n  font-family: \"Quicksand\", sans-serif; }\n\n.countdown-title {\n  color: #6666ff;\n  font-family: \"Quicksand\", sans-serif;\n  text-align: center; }\n\n.clock {\n  align-items: center;\n  background-color: #e6e6ff;\n  border: 2px solid #6666ff;\n  border-radius: 50%;\n  display: flex;\n  height: 14rem;\n  justify-content: center;\n  margin: 4rem auto;\n  width: 14rem;\n  margin-top: 1rem; }\n\n.clock-text {\n  color: #6767ff;\n  font-size: 2.25rem;\n  font-weight: 300; }\n", ""]);
 
 	// exports
 

@@ -27,8 +27,8 @@ var Countdown = React.createClass({
     }
   },
   componentWillUnmount: function(){
-    clearInterval(this.timer); // clear timer
-    this.timer = undefined; // clean up the variable
+    clearInterval(this.timer);
+    this.timer = undefined;
   },
   startTimer: function(){
     this.timer = setInterval(() => {
@@ -64,6 +64,7 @@ var Countdown = React.createClass({
 
     return(
       <div>
+        <h1 className="countdown-title">Countdown</h1>
         <Clock totalSeconds={count}/>
         {renderControlArea()}
 {}      </div>
@@ -72,31 +73,3 @@ var Countdown = React.createClass({
 });
 
 module.exports = Countdown;
-
-/*
-  NOTES:
-    gets fired before the fact
-    takes in next props and next state
-
-    componentWillUpdate: function(nextProps, nextState){
-
-    },
-
-    ------------------------------------------------
-    component always get fired first
-    gets loaded when switching tabs
-    component gets rendered to the screen, the component will mount and lifecycle method gets called
-
-    componentWillMount: function(){
-      console.log('componentWillMount');
-    },
-
-    ------------------------------------------------
-    gets fired right after everything gets rendered in the DOM
-    gets fired after "componentWillMount"
-    access to any refs if want to do any updating
-
-    componentDidmount:function(){
-      console.log('componentDidmount');
-    },
-*/
