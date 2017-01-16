@@ -1,0 +1,21 @@
+.timer-title{
+  color: $timer-title-color;
+  font-family: $Google-font;
+  margin-top: $marginTop;
+  text-align: $center-text;
+}
+
+.button{
+  padding: .75rem 3rem;
+  font-family: $Google-font;
+}
+
+.timer-button{
+  color: $white-text-color;
+  background-color: $timer-button-color;
+}
+
+.timer-button:hover{
+  color: $timer-text-hover-color;
+  color:$white-text-color;
+}

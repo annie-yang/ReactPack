@@ -22,6 +22,7 @@
     background-color: $countdown-button-color;
     font-family: $Google-font;
   }
+
   .button:first-child:hover{
     background-color: $countdown-text-hover-color;
   }
@@ -34,7 +35,8 @@
 .countdown-title{
   color: $countdown-title-color;
   font-family: $Google-font;
-  text-align: center;
+  text-align: $center-text;
+  margin-top:$marginTop;
 }
 
 .clock{
