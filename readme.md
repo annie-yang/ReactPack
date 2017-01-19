@@ -1,3 +1,5 @@
+**IN PROGRESS**</br>
+</br>
 React Application that contains: <br/>
 1) Greeter component <br/>
 2) Weather component <br/>
