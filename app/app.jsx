@@ -7,6 +7,7 @@ var Greeter = require('Greeter');
 var Weather = require('Weather');
 var Timer = require('Timer');
 var Countdown = require('Countdown');
+var TodoApp = require('TodoApp');
 
 $(document).foundation();
 
@@ -18,6 +19,7 @@ ReactDOM.render(
       <Route path="Weather" component={Weather}/>
       <Route path="Timer" component={Timer}/>
       <Route path="Countdown" component={Countdown}/>
+      <Route path="TodoApp" component={TodoApp}/>
       <IndexRoute component={Greeter}/>
     </Route>
   </Router>,

@@ -31,6 +31,9 @@ var Nav = React.createClass({
             <li>
               <Link className="nav-text" to="/countdown" activeClassName="active-link">Countdown</Link>
             </li>
+            <li>
+              <Link className="nav-text" to="/TodoApp" activeClassName="active-link">Tasks</Link>
+            </li>
           </ul>
         </div>
         <div className="top-bar-right">
